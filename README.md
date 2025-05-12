@@ -20,4 +20,4 @@ The String Calculator is a simple utility that parses a string of numbers separa
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd Incubyte---String-Calculator
+   cd String-Calculator

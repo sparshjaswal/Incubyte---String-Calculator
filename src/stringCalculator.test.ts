@@ -18,4 +18,14 @@ describe('StringCalculator - Function Version', () => {
   test('returns sum for two numbers separated by random delimiter', () => {
     expect(add("//;\n1;2")).toBe(3);
   });
+
+  test('throws exception for negative numbers', () => {
+    expect(() => add("1,-2,3")).toThrow("Negatives not allowed: -2");
+    expect(() => add("//;\n1;-2;3")).toThrow("Negatives not allowed: -2");
+  });
+  
+  test('throws exception for multiple negative numbers', () => {
+    expect(() => add("1,-2,-3")).toThrow("Negatives not allowed: -2, -3");
+    expect(() => add("//;\n1;-2;-3")).toThrow("Negatives not allowed: -2, -3");
+  });
 });

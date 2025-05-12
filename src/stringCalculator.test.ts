@@ -32,4 +32,9 @@ describe('StringCalculator - Function Version', () => {
     expect(add("2,1001")).toBe(2);
     expect(add("//;\n1000;1001;2")).toBe(1002);
   });
+
+  test('handles custom delimiter with multiple characters', () => {
+    expect(add("//[***]\n1***2***3")).toBe(6);
+  });
+
 });

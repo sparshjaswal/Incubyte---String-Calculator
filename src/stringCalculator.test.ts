@@ -1,4 +1,4 @@
-import  add from './stringCalculator';
+import add from './stringCalculator';
 
 describe('StringCalculator - Function Version', () => {
   test('returns 0 for empty string', () => {
@@ -12,7 +12,10 @@ describe('StringCalculator - Function Version', () => {
   test('returns sum for two numbers', () => {
     expect(add("1,2")).toBe(3);
   });
-  test('returns sum for two numbers seprated by \\n', () => {
+  test('returns sum for two numbers separated by \\n', () => {
     expect(add("1\n2")).toBe(3);
+  });
+  test('returns sum for two numbers separated by random delimiter', () => {
+    expect(add("//;\n1;2")).toBe(3);
   });
 });

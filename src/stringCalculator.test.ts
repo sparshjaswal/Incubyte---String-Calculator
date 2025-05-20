@@ -37,4 +37,8 @@ describe('StringCalculator - Function Version', () => {
     expect(add("//[***]\n1***2***3")).toBe(6);
   });
 
+  test('if the delimiter is * then to do multiplication', () => {
+    expect(add("//*\n1*2*2")).toBe(4);
+  });
+
 });

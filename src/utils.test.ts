@@ -2,12 +2,12 @@ import { extractNumbers, checkForNegatives } from './utils';
 
 describe('extractNumbers', () => {
   test('extracts numbers with default delimiters', () => {
-    expect(extractNumbers("1,2,3")).toEqual([1, 2, 3]);
-    expect(extractNumbers("1\n2,3")).toEqual([1, 2, 3]);
+    expect(extractNumbers("1,2,3")).toEqual({ "nums": [1, 2, 3], "operator": "add" });
+    expect(extractNumbers("1\n2,3")).toEqual({ "nums": [1, 2, 3], "operator": "add" });
   });
 
   test('extracts numbers with custom single-character delimiter', () => {
-    expect(extractNumbers("//;\n1;2;3")).toEqual([1, 2, 3]);
+    expect(extractNumbers("//;\n1;2;3")).toEqual({ "nums": [1, 2, 3], "operator": "add" });
   });
 
 });

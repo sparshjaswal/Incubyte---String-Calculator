@@ -4,9 +4,12 @@ const add = (numbers: string): number => {
   if (numbers.trim() === "") {
     return 0;
   }
-  const numberArray = extractNumbers(numbers);
-  checkForNegatives(numberArray);
-  return numberArray.filter(num => num <= 1000).reduce((sum, num) => sum + num, 0);
+  const { nums, operator } = extractNumbers(numbers);
+  checkForNegatives(nums)
+  if (operator === 'multiply') {
+    return nums.filter(num => num <= 1000).reduce((acc, val) => acc * val, 1);
+  }
+  return nums.filter(num => num <= 1000).reduce((acc, val) => acc + val, 0);
 }
 
 export default add;
